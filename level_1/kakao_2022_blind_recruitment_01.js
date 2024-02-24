@@ -60,7 +60,7 @@ for(let i of del_co_report2) {
     if(stoped_id.includes(i.split(` `)[1])) {
         last_report[i.split(` `)[0]] += 1;
     }
-} //이중for문 안쓰러고 더럽게 includes()함수 찾아봄
+}
 
 // for(let i of del_co_report2) {
 //     for(let s of stoped_id) {
