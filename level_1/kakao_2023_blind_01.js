@@ -47,3 +47,5 @@ function solution(today, terms, privacies) {
     
     return answer;
 }
+
+console.log(solution("2020.05.15", ["A 1"], ["2001.01.10 A", "2001.01.10 A"]));
