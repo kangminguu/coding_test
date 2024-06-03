@@ -18,6 +18,8 @@ resultArr.forEach((n, idx) => {
     }
 });
 
+console.log(result);
+
 function getScore(chance) {
     let score = chance.replace("S", "").replace("D", "").replace("T", "").replace("*", "").replace("#", "");
     const bonus = chance.replace(score, "").replace("*", "").replace("#", "");

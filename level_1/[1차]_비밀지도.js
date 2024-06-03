@@ -33,4 +33,26 @@ function makeBinNum(num, n) {
     return binNum;
 }
 
-console.log(solution(n, arr1, arr2));
+function solution2(n, arr1, arr2) {
+    return arr1.map((v, i) => {
+
+        // console.log((v | arr2[i]).toString(2));
+
+        return addZero(
+            n, (v | arr2[i]).toString(2)
+        ).replace(/1|0/g, a => +a ? '#' : ' ');
+    });
+}
+
+const addZero = (n, s) => {
+    const a = '0'.repeat(n - s.length) + s;
+    return a;
+}
+
+// console.log(solution2(n, arr1, arr2));
+
+// console.log(solution(n, arr1, arr2));
+
+console.log((100).toString(2));
+console.log((12).toString(2));
+console.log(("12" | "100").toString(2));

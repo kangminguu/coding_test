@@ -16,6 +16,8 @@ function solution(k, score) {
         hallOfFame.push([ ...orderArray ].slice(0, k));
     }
 
+    console.log(hallOfFame);
+
     const answer = hallOfFame.map(arr => arr[arr.length-1]);
 
     return answer;
