@@ -135,15 +135,65 @@
  * async await
  */
 
-const getPromise = (seconds) => new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(`${seconds} 완`);
-    }, seconds * 1000);
-});
+// const getPromise = (seconds) => new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve(`${seconds} 완`);
+//     }, seconds * 1000);
+// });
 
-async function runner() {
-    const result = await getPromise(3);
-    console.log(result);
-}
+// async function runner() {
+//     const result = await getPromise(3);
+//     console.log(result);
+// }
 
-runner();
+// runner();
+
+// const s = "a B z";
+// const n = 4;
+
+// const arrS = [ ...s ];
+
+// const arrA = arrS.map(s => {
+//     if (s != " ") {
+//         if (s.charCodeAt(0) >= 97) return ((s.charCodeAt(0) + n) > 122) ? String.fromCharCode(s.charCodeAt(0) + n - 26) : String.fromCharCode(s.charCodeAt(0) + n);
+//         else return ((s.charCodeAt(0) + n) > 90) ? String.fromCharCode(s.charCodeAt(0) + n - 26) : String.fromCharCode(s.charCodeAt(0) + n);
+//     } else {
+//         return " ";
+//     }
+// });
+// console.log(arrS);
+// console.log(arrA);
+
+// const a = arrA.join("");
+// console.log(a);
+// // console.log(String.fromCharCode(s.charCodeAt(0) + 1));
+
+// // console.log(" ".charCodeAt(0));
+// console.log("Z".charCodeAt(0));
+// console.log(String.fromCharCode("a".charCodeAt(0) + 4));
+
+// const t = "3141592"; //7
+// const p = "271"; //3  7-3+1 =5
+// // 2
+
+// const arrT = [ ...t ];
+
+// const con = [];
+
+// const len = t.length - p.length;
+// const len2 = p.length;
+
+// let count = 0;
+
+// for(let i = 0; i < len2; i++) {
+//     con.push(arrT.shift());
+// }
+
+// for(let i = 0; i < len+1; i++) {
+//     console.log(con);
+//     if(parseInt(con.join("")) > parseInt(p)) count++;
+//     con.shift();
+//     con.push(arrT.shift());
+// }
+
+// console.log(count);
