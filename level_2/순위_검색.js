@@ -7,6 +7,26 @@ const info = [
     "python backend senior chicken 50"
 ];
 
+const obj = {
+    java : {
+        backend : {
+            junior : {
+                pizza : { 
+                    150 : 1
+                }
+            },
+
+            senior : {
+                pizza : { 
+                    20 : 1
+                }
+            }
+        }
+    }
+}
+
+console.log(obj.java.backend);
+
 const query = [
     "java and backend and junior and pizza 100",
     "python and frontend and senior and chicken 200",
@@ -16,15 +36,9 @@ const query = [
     "- and - and - and - 150"
 ];
 
-const each_info = info.map(n => n.split(" "));
-const each_query = query.map(n => [n.split(" ")[0], n.split(" ")[2], n.split(" ")[4], n.split(" ")[6], n.split(" ")[7]]);
-const result = [];
-const len = query.length;
+// const obj_of_info = {};
+// info.forEach(n => {
+//     let one_info = n.split(" ");
 
-console.log(each_query);
-
-// for (let i = 0; i < len; i++) {
-//     for (let s = 0; s < 5; s++) {
-//         if (each_info)
-//     }
-// }
+//     obj_of_info[one_info] = 
+// });
