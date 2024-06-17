@@ -7,26 +7,6 @@ const info = [
     "python backend senior chicken 50"
 ];
 
-const obj = {
-    java : {
-        backend : {
-            junior : {
-                pizza : { 
-                    150 : 1
-                }
-            },
-
-            senior : {
-                pizza : { 
-                    20 : 1
-                }
-            }
-        }
-    }
-}
-
-console.log(obj.java.backend);
-
 const query = [
     "java and backend and junior and pizza 100",
     "python and frontend and senior and chicken 200",
@@ -36,9 +16,43 @@ const query = [
     "- and - and - and - 150"
 ];
 
-// const obj_of_info = {};
-// info.forEach(n => {
-//     let one_info = n.split(" ");
+const obj_info = {};
+const len_info = info.length;
+const len_query = query.length;
+const answer = new Array(len_query).fill(0);
 
-//     obj_of_info[one_info] = 
-// });
+for (let i = 0; i < len_info; i++) {
+    let split_info = info[i].split(" ");
+    split_info[4] = parseInt(split_info[4]);
+
+    const put_objInfo = (a, b, c, d) => (!obj_info[a + b + c + d]) ? obj_info[a + b + c + d] = [split_info[4]] : obj_info[a + b + c + d].push(split_info[4]);
+
+    put_objInfo(split_info[0], split_info[1], split_info[2], split_info[3]);
+    put_objInfo("-", split_info[1], split_info[2], split_info[3]);
+    put_objInfo(split_info[0], "-", split_info[2], split_info[3]);
+    put_objInfo(split_info[0], split_info[1], "-", split_info[3]);
+    put_objInfo(split_info[0], split_info[1], split_info[2], "-");
+    put_objInfo("-", "-", split_info[2], split_info[3]);
+    put_objInfo("-", split_info[1], "-", split_info[3]);
+    put_objInfo("-", split_info[1], split_info[2], "-");
+    put_objInfo(split_info[0], "-", "-", split_info[3]);
+    put_objInfo(split_info[0], "-", split_info[2], "-");
+    put_objInfo(split_info[0], split_info[1], "-", "-");
+    put_objInfo("-", "-", "-", split_info[3]);
+    put_objInfo("-", "-", split_info[2], "-");
+    put_objInfo("-", split_info[1], "-", "-");
+    put_objInfo(split_info[0], "-", "-", "-");
+    put_objInfo("-", "-", "-", "-");
+}
+
+for (let i = 0; i < len_query; i++) {
+    const split_query = query[i].split(" ");
+    const join_query = split_query[0] + split_query[2] + split_query[4] + split_query[6];
+    const minScore = parseInt(split_query[7]);
+
+    obj_info[join_query]
+
+    console.log(obj_info[join_query]);
+}
+
+console.log(obj_info);
