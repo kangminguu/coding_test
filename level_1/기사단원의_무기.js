@@ -5,17 +5,19 @@ const power = 2;
 const arr_number = [];
 for (let i = 1; i <= number; i++) arr_number.push(i);
 
-// console.log(Math.sqrt(10));
-// console.log(findYagsu(16));
-// 1 2 5 10
-
-console.log(findYagsu(9));
-// 1 2 4 8 16
-
-function findYagsu(n) {
+// const arr_yagsu = [];
+let yagsu = 0;
+arr_number.forEach(n => {
     let count = 0;
-    for (let i = 1; i <= Math.ceil(Math.sqrt(n)); i++) {
+    for (let i = 1; i <= Math.sqrt(n); i++) {
         if (!(n % i)) count++;
     }
-    return count;
-}
+    if (n != 1) {
+        count = Number.isInteger(Math.sqrt(n)) ? (count - 1) * 2 + 1 : count * 2;
+    }
+    // arr_yagsu.push((count > limit) ? limit : count);
+    // console.log(yagsu);
+    yagsu += (count > limit) ? power : count;
+});
+
+console.log(yagsu);
